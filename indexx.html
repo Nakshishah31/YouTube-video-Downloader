@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Downloader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #B3D9D9; 
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Change font */
+            background-color: #95B9C7; /* Change background color */
+            padding: 10px; /* Add padding */
+            border-radius: 8px; /* Add border radius */
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #D3D3D3;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3A3B3C;
+            color: #BCB88A;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video Downloader</h1>
+
+    <form action="{{ url_for('download') }}" method="post">
+        <label for="url">Video URL:</label>
+        <input type="text" id="url" name="url" placeholder="Enter the video URL" required><br><br>
+        
+        <label for="platform">Select Platform:</label>
+        <select name="platform" id="platform">
+            <option value="youtube">YouTube</option>
+            <!-- Add more options for other platforms if needed -->
+        </select><br><br>
+        
+        <button type="submit">Download</button>
+    </form>
+</body>
+</html>
